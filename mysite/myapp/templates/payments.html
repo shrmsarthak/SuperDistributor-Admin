@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" 
+src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<button class="btn btn btn-primary" type="submit" style="margin-left: 20px;">New Payment</button>
+
+<div style="margin: 20px;">
+      <table id="myTable">  
+        <thead>  
+          <tr>  
+            <th>SN</th>  
+            <th>Customer Name</th>  
+            <th>Type</th>  
+            <th>Paid In</th>  
+            <th>Amount</th>   
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr>  
+            <td>001</td>  
+            <td>Sarthak Sharma</td>    
+            <td>Advance</td>  
+            <td>Cash</td>    
+            <td>36000</td> 
+          </tr>  
+          <tr>  
+            <td>002</td>  
+            <td>Renish Kapadiya</td>    
+            <td>On Account</td>  
+            <td>Card</td>    
+            <td>50000</td> 
+          </tr>  
+          <tr>  
+            <td>003</td>  
+            <td>Hussain Ezzy</td>    
+            <td>Against Bill</td>  
+            <td>UPI</td>     
+            <td>12000</td>
+          </tr>  
+          <tr>  
+            <td>004</td>  
+            <td>Vibhav Jaswal</td>    
+            <td>Advance</td>  
+            <td>Cash</td>    
+            <td>15000</td>
+          </tr>  
+          <tr>  
+            <td>005</td>  
+            <td>Nihal Dua</td>    
+            <td>Against Bill</td>  
+            <td>Card</td>   
+            <td>9000</td>
+          </tr>  
+        </tbody>  
+      </table>
+
+    </div>
+
+
+      <script>
+      $(document).ready(function(){
+          $('#myTable').dataTable();
+      });
+      </script>
+
+      <table id="myTable" class="table table-striped">
+        
+        <div class="table-responsive">
+          <table id="myTable" class="display table" width="100%" >
+
+          </table>
+        </div>
+{% endblock %}

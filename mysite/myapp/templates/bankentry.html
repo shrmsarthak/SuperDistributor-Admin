@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" 
+src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<button class="btn btn btn-primary" type="submit" style="margin-left: 20px;">New Enrty</button>
+
+<div style="margin: 20px;">
+      <table id="myTable">  
+        <thead>  
+          <tr>  
+            <th>SN</th>  
+            <th>Account No. | UPI</th>  
+            <th>Bank</th>  
+            <th>Credit</th>  
+            <th>Debit</th>  
+            <th>Closing Balance</th>   
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr>  
+            <td>001</td>  
+            <td>1610910067</td>    
+            <td>PNB</td>  
+            <td>36000</td>   
+            <td>2000</td>    
+            <td>500000</td> 
+          </tr>  
+          <tr>  
+            <td>002</td>  
+            <td>1510910045</td>    
+            <td>HDFC</td>  
+            <td>50000</td>   
+            <td>10000</td>    
+            <td>450000</td> 
+          </tr>  
+        </tbody>  
+      </table>
+
+    </div>
+
+
+      <script>
+      $(document).ready(function(){
+          $('#myTable').dataTable();
+      });
+      </script>
+
+      <table id="myTable" class="table table-striped">
+        
+        <div class="table-responsive">
+          <table id="myTable" class="display table" width="100%" >
+
+          </table>
+        </div>
+{% endblock %}

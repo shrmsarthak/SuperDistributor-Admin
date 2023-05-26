@@ -1,0 +1,66 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <title>SUPER DISTRIBUTOR</title>
+    {% load static %}
+
+    <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 10px;
+    }
+    .grid-item {
+      padding: 15px;
+      font-size: 15px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      margin: 10px;
+      text-align: center;
+    }
+    .grid-item-btn {
+      padding: 15px;
+      font-size: 15px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 1;
+        border-top: 2px solid #ccc;
+        margin: 1em 0;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 0;
+    }
+    .vertical {
+        border-left: 1px solid #ccc;
+        height: 320px;
+        margin-left: -20px;
+        margin-top: 10px;
+        position:absolute;
+        left: 50%;
+    }
+    </style>
+
+  </head>
+
+  <body background="{% static 'myapp/back5.png' %}" style="background-size: cover;background-repeat: no-repeat;background-attachment: fixed;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    {% include 'header.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+  </body>
+</html>
+
