@@ -17,6 +17,27 @@ def home(request):
     if 'deliveryconfirmation' in request.POST:
         return redirect('deliveryconfirmation')
 
+    if 'salevoucher' in request.POST:
+        return redirect('salevoucher')
+
+    if 'purchase' in request.POST:
+        return redirect('purchase')
+
+    if 'vehicletracking' in request.POST:
+        return redirect('vehicletracking')
+
+    if 'inward' in request.POST:
+        return redirect('inward')
+
+    if 'outward' in request.POST:
+        return redirect('outward')
+
+    if 'postcomplaint' in request.POST:
+        return redirect('postcomplaint')
+
+    if 'claimdataentry' in request.POST:
+        return redirect('claimdataentry')
+
     return render(request, "home.html")
 
 def expenses(request):
@@ -33,6 +54,33 @@ def deliveryconfirmation(request):
 
 def postmessage(request):
     return render(request, "postmessage.html")
+
+def adddealer(request):
+    return render(request, "adddealer.html")
+
+def addemployee(request):
+    return render(request, "addemployee.html")
+
+def salevoucher(request):
+    return render(request, "salesvoucher.html")
+
+def purchase(request):
+    return render(request, "purchase.html")
+
+def vehicletracking(request):
+    return render(request, "vehicletracking.html")
+
+def inward(request):
+    return render(request, "inward.html")
+
+def outward(request):
+    return render(request, "outward.html")
+
+def postcomplaint(request):
+    return render(request, "postcomplaint.html")
+
+def claimdataentry(request):
+    return render(request, "claimdataentry.html")
 
 def loginpage(request):
     

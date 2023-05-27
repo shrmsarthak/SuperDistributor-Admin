@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+		
+
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card-body p-3 text-center">
+
+              		<h5 style="margin: 20px; text-align: center;">Send Vehicle Tracking Link</h5>
+                      <form method="POST">
+ 
+                      	<div class="dropdown">
+						  <button style="margin-top: 20px;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    Select Person
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a class="dropdown-item" href="#">Person 1</a></li>
+						    <li><a class="dropdown-item" href="#">Person 2</a></li>
+						    <li><a class="dropdown-item" href="#">Person 3</a></li>
+						  </ul>
+						</div>
+						<br>
+                      {% csrf_token %}
+                      <div class="form-outline form-white mb-4">
+                        
+                        <div class="form-group">
+						     <input type="text" name="trackinglink" id="trackinglink" class="form-control form-control" placeholder="Enter Tracking Link Here" required/>
+						</div>
+ 
+                      </div>
+						
+						<button class="btn btn btn-primary" type="submit">Post</button>
+                      
+                      </form>
+              </div>
+          </div>
+        </div>
+
+{% endblock %}

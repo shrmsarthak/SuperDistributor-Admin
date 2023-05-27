@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+		
+
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card-body p-3 text-center">
+
+                      <form method="POST">
+ 
+<!--                       	<div class="dropdown">
+						  <button style="margin-top: 10px;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    Select Dealer/Customer
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a class="dropdown-item" href="#">AMIT TOMAR</a></li>
+						    <li><a class="dropdown-item" href="#">A TO Z WASTE MANAGEMENT </a></li>
+						    <li><a class="dropdown-item" href="#">A.R. GUEST HOUSE BARLA</a></li>
+						  </ul>
+						</div>
+						<br> -->
+                      {% csrf_token %}
+                      <div class="form-outline form-white mb-4">
+
+                        <div class="mb-3">
+						  <label for="formFile" class="form-label">Select Shop Photo Here</label>
+						  <input class="form-control" type="file" id="formFile">
+						</div>
+						<br>
+                        <input type="text" name="shopname" id="shopname" class="form-control form-control" placeholder="Shop Name" required/><br>
+
+                        <div class="mb-3">
+						  <label for="formFile" class="form-label">Select Person Image</label>
+						  <input class="form-control" type="file" id="formFile">
+						</div>
+
+                        <input type="text" name="personname" id="personname" class="form-control form-control" placeholder="Person Name" required/><br>
+
+                        <input type="number" name="personnumber" id="personnumber" class="form-control form-control" placeholder="Phone Number" required/><br>
+
+                        <input type="text" name="add_dealer_address" id="add_dealer_address" class="form-control form-control" placeholder="Address" maxlength="4" required/><br>
+
+                        <input type="text" name="gstn" id="gstn" class="form-control form-control" placeholder="GSTN" required/><br>
+
+                        <div class="mb-3">
+						  <label for="formFile" class="form-label">Select GSTN Image</label>
+						  <input class="form-control" type="file" id="formFile">
+						</div>
+
+						<br>
+                        
+                        <input type="text" name="aadhaar" id="aadhaar" class="form-control form-control" placeholder="Aadhaar Number" required/><br>
+
+                        <div class="mb-3">
+						  <label for="formFile" class="form-label">Select Aadhaar Image</label>
+						  <input class="form-control" type="file" id="formFile">
+						</div>
+
+						<br>
+                        
+                        <input type="text" name="pan" id="pan" class="form-control form-control" placeholder="Pan Number" required/><br>
+
+                        <div class="mb-3">
+						  <label for="formFile" class="form-label">Select Pan Image</label>
+						  <input class="form-control" type="file" id="formFile">
+						</div>
+                      	<br>
+                        <input type="text" name="additionaddress" id="additionaddress" class="form-control form-control" placeholder="Additional Shipping Address" required/>
+
+                      </div>
+
+                      <button class="btn btn btn-primary" type="submit">Add Now</button>
+                      </form>
+              </div>
+          </div>
+        </div>
+
+{% endblock %}

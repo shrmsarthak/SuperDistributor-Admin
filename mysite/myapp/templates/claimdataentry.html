@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+                  <form method="POST">
+                    <div style="margin-top: 20px;">
+                      
+                    {% csrf_token %}
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col">
+      
+                          <select onchange="disableEntry(this)" class="form-select" aria-label="Default select example">
+                            <option value="1" selected>Claim Data Enrty</option>
+                            <option value="2">Customer Data Entry</option>
+                          </select>
+                        </div>   
+                      </div>
+                    </div>
+
+                    <h5 style="margin: 20px; text-align: center;">Claim Data Entry Here</h5>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+      
+                          <input type="number" name="documentno" id="documentno" class="form-control form-control" placeholder="Document Number" required/><br>
+                        </div>
+                        <div class="col">
+                          <input type="number" name="oldproductserialnumber" id="oldproductserialnumber" class="form-control form-control" placeholder="Old Product Serial Number" required/>
+                        </div>
+                        
+                        <div class="col">
+                          <input type="number" name="newproductserialnumber" id="newproductserialnumber" class="form-control form-control" placeholder="New Product Serial Number" required/>
+                        </div>
+
+                        <div class="col">
+                          <input type="number" name="claim_customername" id="claim_customername" class="form-control form-control" placeholder="Customer Name" required/><br>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        
+
+                        <div class="col">
+                            <input type="number" name="phoneno" id="phoneno" class="form-control form-control" placeholder="Phone Number" required/>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="address" id="address" class="form-control form-control" placeholder="Address" required/>
+                        </div>
+                        <div class="col">
+                            <input type="number" name="productmodelno" id="productmodelno" class="form-control form-control" placeholder="Product Model Number" required/>
+                        </div>
+
+                      </div>
+                    </div>
+
+             
+
+                    <h5 style="margin: 20px; text-align: center;">Customer Data Entry Here</h5><br>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <input disabled type="text" name="customername" id="customername" class="form-control form-control" placeholder="Customer Name" required/><br>
+                        </div>
+                        <div class="col">
+                          <input disabled type="number" name="customerphone" id="customerphone" class="form-control form-control" placeholder="Customer Phone" required/>
+                        </div>
+                        
+                        <div class="col">
+                          <input disabled type="text" name="customerlocation" id="customerlocation" class="form-control form-control" placeholder="Customer Location" required/><br>
+                        </div>
+
+                        <div class="col">
+                          <input disabled type="text" name="requirements" id="requirements" class="form-control form-control" placeholder="Requirement" required/><br>
+                        </div>
+
+                        <div class="col">
+                          <label style="margin-top:7px;">Last Follow Up Date</label>
+                        </div>
+
+                        <div class="col">
+                          <input disabled type="date" name="followupdate" id="followupdate" class="form-control form-control" placeholder="Follow Up Date" required/><br>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        
+                       <label>Notes</label><br><br>
+                        <div class="col">
+                          <textarea disabled class="form-control" id="customernotes" rows="3"></textarea>
+                        </div>
+
+                      </div>
+                    </div>
+				<button class="btn btn btn-primary" type="submit" style="margin-left: 125px; margin-top: 20px;">Submit</button>
+
+<script type="text/javascript">
+	function disableEntry(entry){
+		console.log(entry.value)
+		if(entry.value == 1){
+
+			document.getElementById('documentno').disabled = false;
+			document.getElementById('oldproductserialnumber').disabled = false;
+			document.getElementById('newproductserialnumber').disabled = false;
+			document.getElementById('claim_customername').disabled = false;
+			document.getElementById('phoneno').disabled = false;
+			document.getElementById('address').disabled = false;
+			document.getElementById('productmodelno').disabled = false;
+
+			document.getElementById('customername').disabled = true;
+			document.getElementById('customerphone').disabled = true;
+			document.getElementById('customerlocation').disabled = true;
+			document.getElementById('requirements').disabled = true;
+			document.getElementById('followupdate').disabled = true;
+			document.getElementById('customernotes').disabled = true;
+		} else {
+
+			document.getElementById('documentno').disabled = true;
+			document.getElementById('oldproductserialnumber').disabled = true;
+			document.getElementById('newproductserialnumber').disabled = true;
+			document.getElementById('claim_customername').disabled = true;
+			document.getElementById('phoneno').disabled = true;
+			document.getElementById('address').disabled = true;
+			document.getElementById('productmodelno').disabled = true;
+
+			document.getElementById('customername').disabled = false;
+			document.getElementById('customerphone').disabled = false;
+			document.getElementById('customerlocation').disabled = false;
+			document.getElementById('requirements').disabled = false;
+			document.getElementById('followupdate').disabled = false;
+			document.getElementById('customernotes').disabled = false;
+		}
+	}
+</script>
+
+{% endblock %}
