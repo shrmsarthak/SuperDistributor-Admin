@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css?family=Roboto");
+@-webkit-keyframes come-in {
+  0% {
+    -webkit-transform: translatey(100px);
+            transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    -webkit-transform: translateX(-50px) scale(0.4);
+            transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    -webkit-transform: translateX(0px) scale(1.2);
+            transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px) scale(1);
+            transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes come-in {
+  0% {
+    -webkit-transform: translatey(100px);
+            transform: translatey(100px);
+    opacity: 0;
+  }
+  30% {
+    -webkit-transform: translateX(-50px) scale(0.4);
+            transform: translateX(-50px) scale(0.4);
+  }
+  70% {
+    -webkit-transform: translateX(0px) scale(1.2);
+            transform: translateX(0px) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translatey(0px) scale(1);
+            transform: translatey(0px) scale(1);
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.floating-container {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  right: 0;
+  margin: 35px 25px;
+}
+.floating-container:hover {
+  height: 300px;
+}
+.floating-container:hover .floating-button {
+  box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+  -webkit-transform: translatey(5px);
+          transform: translatey(5px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.floating-container:hover .element-container .float-element:nth-child(1) {
+  -webkit-animation: come-in 0.4s forwards 0.2s;
+          animation: come-in 0.4s forwards 0.2s;
+}
+.floating-container:hover .element-container .float-element:nth-child(2) {
+  -webkit-animation: come-in 0.4s forwards 0.4s;
+          animation: come-in 0.4s forwards 0.4s;
+}
+.floating-container:hover .element-container .float-element:nth-child(3) {
+  -webkit-animation: come-in 0.4s forwards 0.6s;
+          animation: come-in 0.4s forwards 0.6s;
+}
+.floating-container .floating-button {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #2cb3f0;
+  bottom: 0;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  line-height: 65px;
+  text-align: center;
+  font-size: 23px;
+  z-index: 100;
+  box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.floating-container .float-element {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 15px auto;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 50px;
+  z-index: 0;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+.floating-container .float-element .material-icons {
+  vertical-align: middle;
+  font-size: 16px;
+}
+.floating-container .float-element:nth-child(1) {
+  background: #42A5F5;
+  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+}
+.floating-container .float-element:nth-child(2) {
+  background: #4CAF50;
+  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+}
+.floating-container .float-element:nth-child(3) {
+  background: #FF9800;
+  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+
+<div class="grid-container">
+  <div class="grid-item"><b>Total Outstanding</b> : 20</div>
+  <div class="grid-item"><b>Pendency Of Service Complaints</b> : 3</div>
+  <div class="grid-item"><b>Pendency Of To-do List</b> : 56</div>
+  <div class="grid-item"><b>Pendency Of Order List</b> : 3</div>
+</div>
+
+<hr/>
+<div class="grid-container">
+  <h5 style="margin-left: 270px;"><b>Accounting</b></h5>
+  <h5 style="margin-left: 480px;"><b>Servicing</b></h5>
+</div>
+
+<form method="POST">
+  {% csrf_token %}
+<div class="grid-container">
+    
+  <div class="grid-container" style="margin: auto; width: 50%; padding: 10px; margin-left: 50px;">
+    
+    <button style="width: 150px; height: 322px;" type="submit" name="paymentbtn" class="btn btn-primary">Payments</button>
+
+    <div>
+      <button style="width: 150px; height: 90px; margin-left: 38px;" type="submit" class="btn btn-secondary grid-item-btn" name="salevoucher">Sale Voucher</button>
+      <button style="width: 150px; height: 90px; margin-left: 38px; margin-top: 25px;" name="purchase" type="submit" class="btn btn-danger grid-item-btn">Purchase</button>
+      <button style="width: 150px; height: 90px; margin-left: 38px; margin-top: 25px;" type="submit" class="btn btn-success grid-item-btn" name="expensebtn">Expense</button>
+    </div>
+
+    <div style="margin-left: 20px;">
+      <button style="width: 150px; height: 90px;" type="submit" name="bankentry" class="btn btn-warning grid-item-btn">Banks/Entry</button>
+      <button style="width: 150px; height: 90px; margin-top: 25px;" type="submit" name="deliveryconfirmation" class="btn btn-info grid-item-btn">Delivery Confirmation</button>
+      <button style="width: 150px; height: 90px; margin-top: 25px;" type="submit" name="vehicletracking" class="btn btn-dark grid-item-btn">Vehicle Tracking Details</button>
+    </div>
+
+  </div>
+
+  <div class = "vertical"></div>
+
+  <div class="grid-container" style="margin: auto; width: 50%; padding: 10px; margin-left: 50px; margin-top: 0px;">
+    <div>
+      <button style="width: 150px; height: 90px; margin-left: 38px;" type="submit" name="inward" class="btn btn-secondary grid-item-btn">Inward</button>
+      <button style="width: 150px; height: 90px; margin-left: 38px; margin-top: 25px;" type="submit" name="outward" class="btn btn-danger grid-item-btn">Outward</button>
+    </div>
+
+    <div style="margin-left: 20px;">
+      <button style="width: 150px; height: 90px;" type="submit" name="claimdataentry" class="btn btn-primary grid-item-btn">Claim Data Entry</button>
+    </div>
+
+    <div style="margin-left: 20px;">
+      <button style="width: 150px; height: 90px;" type="submit" name="postcomplaint" class="btn btn-success grid-item-btn">Post Complaint</button>
+    </div>
+
+  </div>
+
+</div>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="floating-container">
+  <div class="floating-button">+</div>
+  <div class="element-container">
+
+    <a href="/adddealer"> <span class="float-element tooltip-left">
+      <i class="material-icons">person
+      </i></a>
+    </span>
+      <a href="/addemployee"><span class="float-element">
+      <i class="material-icons">support_agent
+</i></a>
+    </span>
+    <a href="/addtechnician">
+      <span class="float-element">
+      <i class="material-icons">home_repair_service</i></a>
+    </span>
+  </div>
+</div>
+
+</form>
+
+{% endblock %}

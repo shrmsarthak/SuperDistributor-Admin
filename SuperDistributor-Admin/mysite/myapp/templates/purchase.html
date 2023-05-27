@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+                  <form method="POST">
+                    <div style="margin-top: 20px;">
+                      <h5 style="margin: 20px; text-align: center;">Enter Purchase Details Here</h5>
+                    {% csrf_token %}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+      
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Vendor</option>
+                            <option value="1">Vendor 1</option>
+                            <option value="2">Vendor 2</option>
+                            <option value="3">Vendor 3</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Prefix</option>
+                            <option value="1">Invoice</option>
+                            <option value="2">Challan</option>
+                            <option value="3">Cash</option>
+                            <option value="3">Other</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                              <input type="number" name="docno" id="docno" class="form-control form-control" placeholder="Doc. No." required/><br>
+                        </div>
+
+                        <div class="col">
+      
+                          <input type="date" name="issuedate" id="issuedate" class="form-control form-control" placeholder="Issue Date" required/>
+                        </div>
+                        <div class="col">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Product</option>
+                            <option value="1">Product 1</option>
+                            <option value="2">Product 2</option>
+                            <option value="3">Product 3</option>
+                          </select>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                            <input type="text" name="productdescription" id="productdescription" class="form-control form-control" placeholder="Product Description" required/>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+      
+                          <input type="number" name="quantity" id="quantity" class="form-control form-control" placeholder="Quantity" required/><br>
+                        </div>
+                        <div class="col">
+                          <input type="number" name="purchaseprice" id="purchaseprice" class="form-control form-control" placeholder="Purchase Price" required/>
+                        </div>
+                        <div class="col">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Tax</option>
+                            <option value="1">GST rate 1 %</option>
+                            <option value="2">GST rate 3 %</option>
+                            <option value="3">GST rate 5 %</option>
+                            <option value="4">GST rate 8.92 %</option>
+                            <option value="5">GST rate 12 %</option>
+                            <option value="6">GST rate 18 %</option>
+                            <option value="7">GST rate 28 %</option>
+                          </select>
+                        </div>
+
+                        <div class="col" style="margin-top: 7px;">
+                        <div class="form-check">
+                          <label class="form-check-label" for="flexCheckIndeterminate">
+                            Discount on All
+                          </label>
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        </div>
+
+                        </div>
+                        <div class="col">
+                          <input type="text" name="extracharges" id="extracharges" class="form-control form-control" placeholder="Extra Charges" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        
+
+                        <div class="col">
+                        </div>
+
+                      </div>
+                    </div>
+                    </div>
+
+<button class="btn btn btn-primary" type="submit" style="margin-left: 115px;"> + Add</button>
+    <div style="margin-left: 115px; margin-right: 115px; margin-top: 30px;">
+      <table id="myTable">  
+        <thead>  
+          <tr>  
+            <th>SN</th>  
+            <th>Product</th>  
+            <th>Description</th>  
+            <th>Quantity</th>  
+            <th>Unit Price</th> 
+            <th>Tax</th> 
+            <th>Extra Charges</th>   
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr>  
+            <td>1</td>  
+            <td>EXIDE CHLORIDE 12/7AH UPS BATTERY</td>    
+            <td>1 YEAR LIMITED MANUFACTURER WARRENTY</td>  
+            <td>1</td>    
+            <td>3600</td>   
+            <td>360</td>   
+            <td>200</td> 
+          </tr>    
+        </tbody>  
+      </table>
+
+    </div><br>
+    
+    <button class="btn btn btn-primary" type="submit" style="margin-left: 115px;">Save & Close</button>
+
+  </form>
+      <script>
+      $(document).ready(function(){
+          $('#myTable').dataTable();
+      });
+      </script>
+
+      <table id="myTable" class="table table-striped">
+        
+        <div class="table-responsive">
+          <table id="myTable" class="display table" width="100%" >
+
+          </table>
+        </div>
+
+{% endblock %}

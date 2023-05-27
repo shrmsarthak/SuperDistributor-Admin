@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+                  <form method="POST">
+                    <div style="margin-top: 20px;">
+                      <h5 style="margin: 20px; text-align: center;">Enter Outward Details Here</h5><br>
+                    {% csrf_token %}
+                    <div class="container">
+                      <div class="row">
+
+                        <div class="col">
+                              <input type="number" name="docno" id="docno" class="form-control form-control" placeholder="Doc. No." required/><br>
+                        </div>
+                        <div class="col">
+      
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Selection</option>
+                            <option value="1">New</option>
+                            <option value="2">Old</option>
+                          </select>
+                        </div>
+						<div class="col">
+							<label style="margin-top:7px;">Date of Document</label>
+                        </div>
+                        <div class="col">
+      
+                          <input type="date" name="currentdate" id="currentdate" class="form-control form-control" placeholder="Current Date" required/>
+                        </div>
+
+                        <div class="col">
+							<label style="margin-top:7px;">Date of Sale</label>
+                        </div>
+
+                        <div class="col">
+                          <input type="date" name="dateofsale" id="dateofsale" class="form-control form-control" placeholder="Date of Sale" required/>
+                        </div>
+
+                         
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+      
+                          <input type="number" name="modelno" id="modelno" class="form-control form-control" placeholder="Model Number" required/><br>
+                        </div>
+                        <div class="col">
+                          <input type="number" name="serialnumber" id="serialnumber" class="form-control form-control" placeholder="Serial Number" required/>
+                        </div>
+                        
+						<div class="col">
+                            <input type="text" name="outwardto" id="outwardto" class="form-control form-control" placeholder="Outward To" required/>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+                        
+
+                        <div class="col">
+                            <input type="text" name="customername" id="customername" class="form-control form-control" placeholder="Customer Name" required/>
+                        </div>
+                        <div class="col">
+                            <input type="number" name="customerphone" id="customerphone" class="form-control form-control" placeholder="Customer Phone" required/>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="customeraddress" id="customeraddress" class="form-control form-control" placeholder="Customer Address" required/>
+                        </div>
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                      <div class="row">
+                        
+
+                        <div class="col">
+                            <input type="text" name="serialno_new_old" id="serialno_new_old" class="form-control form-control" placeholder="Serial No. of New/Old" required/>
+                        </div>
+                        
+                        <div class="col">
+      
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Option</option>
+                            <option value="1">Replaced By Tata Power Pending From Company</option>
+                            <option value="2">Settled</option>
+                            <option value="3">New To Dealer Old To Be Picked/Pending</option>
+                          </select>
+                        </div>
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                      	<div class="row">
+                        
+                        <div class="col">
+                            <div class="form-group">
+							    <label style="margin-left:3px;" for="exampleFormControlTextarea1">Notes</label><br><br>
+							    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							</div>
+                        </div>
+                        
+                    	</div>
+
+                    </div>
+				<button class="btn btn btn-primary" type="submit" style="margin-left: 125px; margin-top: 20px;">Submit</button>
+
+{% endblock %}

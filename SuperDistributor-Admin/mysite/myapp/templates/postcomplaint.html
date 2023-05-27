@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" 
+href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+                  <form method="POST">
+                    <div style="margin-top: 20px;">
+                      <h5 style="margin: 20px; text-align: center;">Post Complaint Here</h5><br>
+                    {% csrf_token %}
+                    <div class="container">
+                      <div class="row">
+						
+						<div class="col">
+                            <input type="text" name="customername" id="customername" class="form-control form-control" placeholder="Customer Name" required/>
+                        </div>
+
+						<div class="col">
+                            <input type="text" name="productname" id="productname" class="form-control form-control" placeholder="Product Name" required/>
+                        </div>
+
+                        <div class="col">
+                              <input type="number" name="phoneno" id="phoneno" class="form-control form-control" placeholder="Phone No." required/><br>
+                        </div>
+                         
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="row">
+
+                      	<div class="col">
+                            <input type="text" name="address" id="address" class="form-control form-control" placeholder="Address" required/>
+                        </div>
+
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="container">
+                      <div class="row">
+                        
+                        <div class="col">
+                            <input type="number" name="serialnumber" id="serialnumber" class="form-control form-control" placeholder="Serial Number" required/>
+                        </div>
+                        <div class="col">
+                            <input type="number" name="modelno" id="modelno" class="form-control form-control" placeholder="Model No" required/>
+                        </div>
+                        <div class="col">
+      
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Technician</option>
+                            <option value="1">Technician 1</option>
+                            <option value="2">Technician 2</option>
+                            <option value="3">Technician 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+				<button class="btn btn btn-primary" type="submit" style="margin-left: 125px; margin-top: 20px;">Post Now</button>
+
+{% endblock %}
